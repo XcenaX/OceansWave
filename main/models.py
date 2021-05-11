@@ -1,6 +1,5 @@
 from django.db import models
 from oceanswave.yandex_s3_storage import ClientDocsStorage
-from django_countries.fields import CountryField
 from datetime import date
 
 class New(models.Model):
