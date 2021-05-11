@@ -84,23 +84,23 @@ WSGI_APPLICATION = 'oceanswave.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'cw30103_xcenax',
-        'USER': 'cw30103_xcenax',
-        'PASSWORD': 'Dagad582',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': 'cw30103_xcenax',
+#         'USER': 'cw30103_xcenax',
+#         'PASSWORD': 'Dagad582',
+#         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation
