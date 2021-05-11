@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': 'cw30103_xcenax',
         'USER': 'cw30103_xcenax',
         'PASSWORD': 'Dagad582#',
-        'HOST': 'vh376.timeweb.ru',   # Or an IP Address that your DB is hosted on
+        'HOST': '185.114.247.102',   # Or an IP Address that your DB is hosted on
         'PORT': '',
     }
 }
