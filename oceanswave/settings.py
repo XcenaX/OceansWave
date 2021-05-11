@@ -94,10 +94,10 @@ WSGI_APPLICATION = 'oceanswave.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'oceanswa_xcenax',
-        'USER': 'oceanswa_xcenax',
+        'NAME': 'cw30103_xcenax',
+        'USER': 'cw30103_xcenax',
         'PASSWORD': 'Dagad582#',
-        'HOST': 'srv-pleskdb30.ps.kz',   # Or an IP Address that your DB is hosted on
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
     }
 }
