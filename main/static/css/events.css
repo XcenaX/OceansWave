@@ -95,6 +95,10 @@
     cursor: pointer;
 }
 
+.buy-block .buttons{
+    width: 50%;
+
+}
 
 @media(max-width:900px){
     .sorts .input-block{
@@ -106,11 +110,6 @@
     .input-block input{
         width: 100%;
         padding-right: 25% !important;
-    }
-
-    .buy-block .buttons{
-        width: 50%;
-
     }
     
 }
