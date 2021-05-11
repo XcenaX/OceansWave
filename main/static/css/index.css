@@ -1765,6 +1765,9 @@ label.select:after{
     .river3.hide-mobile.first, .river3.hide-mobile.second{
         height: 520px !important;
     }
+    .buttons .left-places, .buttons .order{
+        font-size: 12px;
+    }
 }
 
 @media(max-width: 900px){
