@@ -1,0 +1,154 @@
+{% load static %}
+
+{% block links %}
+    <head>        
+        <script src="{%static 'js/jquery.min.js'%}"></script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Oceans Wave</title>
+        <link rel="stylesheet" href="{%static 'css/index.css'%}">
+        <link rel="shortcut icon" src="{%static 'img/logo.png'%}" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="{%static 'fonts/stylesheet.css'%}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="{%static 'rateit/rateit.css'%}">
+        <script src="{%static 'rateit/jquery.rateit.js'%}"></script>
+        <script src="{%static 'js/functions.js'%}"></script>
+        <link rel="stylesheet" type="text/css" href="{%static 'css/pagination.css'%}">
+        <style>
+            .checked{
+                background: linear-gradient(103.4deg, #FFAC30 29.02%, #FFD08B 88.66%);
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -webkit-text-fill-color: transparent; 
+                -moz-text-fill-color: transparent;
+            }
+        </style>
+        
+        {% block styles %}
+
+        {% endblock %}
+    </head>
+{% endblock %}
+
+
+
+{% block body%}
+    <body>
+        {%block river%}{%endblock%}
+        <div class="wrap">
+            <div class="header hide-mobile"> 
+                <a href="{%url 'main:index'%}">
+                    <div class="logos-block">
+                        <div class="logo" style="background-image: url({%static 'img/logo.svg'%});"></div>            
+                    </div>
+                </a>                
+                <div class="menu-block">
+                    <div class="item">
+                        <a href="/#">
+                            <div class="text">Главная</div>
+                        </a>                    
+                        <div class="item-underline"></div>
+                    </div>
+                    <div class="item">
+                        <a href="/#about">
+                            <div class="text">О нас</div>
+                        </a>                    
+                        <div class="item-underline"></div>
+                    </div>
+                    <div class="item">
+                        <a href="/#why">
+                            <div class="text">Преимущества</div>
+                        </a>                    
+                        <div class="item-underline"></div>
+                    </div>
+                    <div class="item no-margin-right">
+                        <a href="/#specialists">
+                            <div class="text">Специалисты</div>
+                        </a>
+                        
+                        <div class="item-underline"></div>
+                    </div>                
+                </div>
+                <a href="{%url 'main:events'%}">
+                    <div class="events-button">Список мероприятий</div>
+                </a>                
+            </div>
+    
+            <div class="mobile-header show-mobile-flex">            
+                <div class="button" id="nav_button" onclick="open_close_Nav()"></div>
+                <a href="{%url 'main:index'%}" class="logo">
+                    
+                </a>                
+            </div>
+    
+            <div class="mobile-menu show-mobile-flex" id="nav">
+                    <div class="button" onclick="open_close_Nav()"></div>
+                    <div class="menu">
+                        <a href="#">
+                            <div class="item">Главная</div>
+                        </a>
+                        <a href="#about">
+                            <div class="item">О нас</div>
+                        </a>
+                        <a href="#why">
+                            <div class="item">Преимущества</div>
+                        </a>
+                        <a href="#specialists">
+                            <div class="item">Специалисты</div>
+                        </a>
+                    </div>
+                    <div class="pages">
+                        <a href="{%url 'main:specialists'%}">
+                            <div class="item">Список специалистов</div>
+                        </a>
+                        <a href="{%url 'main:events'%}">
+                            <div class="item">Список мероприятий</div>
+                        </a>
+                    </div>
+                    <div class="social">
+                        <a href="#">
+                            <div class="item facebook"></div>
+                        </a>
+                        <a href="#">
+                            <div class="item twitter"></div>
+                        </a>
+                        <a href="#">
+                            <div class="item instagram"></div>
+                        </a>
+                    </div>
+            </div>
+            {%block content%}
+
+            {%endblock%}             
+        </div>
+    </body>                      
+{% endblock %}
+
+
+{%block footer%}
+    <div class="footer hide-mobile">
+        <div class="bg"></div>
+        <div class="menu">
+            <a href="/#">Главная</a>
+            <a href="/#about">О нас</a>
+            <a href="/#why">Преимущества</a>
+            <a href="/#specialists">Специалисты</a>                
+        </div>
+        <div class="social">
+            <a href="https://www.facebook.com/">
+                <div class="item facebook"></div>
+            </a>                
+            <a href="https://twitter.com/">
+                <div class="item twitter"></div>
+            </a>                
+            <a href="https://www.instagram.com/">
+                <div class="item instagram"></div>
+            </a>
+        </div>
+    </div>
+    <div class="mobile-footer show-mobile"></div>
+{%endblock%}
+
+{%block scripts%}
+{%endblock%}

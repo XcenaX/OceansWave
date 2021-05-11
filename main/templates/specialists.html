@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block styles%}
+    <script src="{%static 'js/custom-select.js'%}"></script>
+    {%if not specialists%}
+        <style>
+            .wrap{
+                height: -webkit-fill-available;
+            }
+        </style>
+    {%endif%}
+    <style>
+        @media(max-width: 900px){
+            .specialists-block{
+                margin-top: 50px !important;
+            }
+        }
+    </style>
+{%endblock%}
+
+{%block content%}
+
+    <div class="sort-block">
+        <div class="title hide-mobile">Сортировка</div>
+        <div class="sorts">
+            <label class="select" style="width: 25%;">                
+                <select class="sort-quests" onchange="location = this.value;">
+                    <option disabled="disabled" selected="selected" style="display:none;" value="?country=&rating={{rating}}">Страна</option>
+                    {% for current_country in countries%}
+                        <option {%if country.id == current_country.id %} selected {%endif%} value="?country={{current_country.id}}&rating={{rating}}">{{current_country.country}}</option>
+                    {%endfor%}
+                </select>
+            </label>
+            
+            {%if country and country != ''%}
+                <label class="select" style="width: 25%;">                
+                    <select class="sort-quests" onchange="location = this.value;">                        
+                        <option disabled="disabled" selected="selected" style="display:none;" value="?country={{country.id}}&city=&rating={{rating}}">Город</option>
+                        {%for current_city in cities%}
+                            <option {%if city.id == current_city.id %} selected {%endif%} value="?country={{country.id}}&city={{current_city.id}}&rating={{rating}}">{{current_city.name}}</option>
+                        {%endfor%}
+                    </select>
+                </label>             
+            {%endif%}
+            <label class="select" style="width: 25%;">                
+                <select class="sort-quests" onchange="location = this.value;">   
+                    <option disabled="disabled" selected="selected" style="display:none;" value="?country={{country.id}}&city={{current_city.id}}&rating=">Рейтинг</option>                                         
+                    <option {%if rating == 'true' %} selected {%endif%} value="?country={{country.id}}&city={{city.id}}&rating=true">По возрастанию</option>
+                    <option {%if rating == 'false' %} selected {%endif%} value="?country={{country.id}}&city={{city.id}}&rating=false">По убыванию</option>
+                </select>
+            </label>  
+                
+        </div>
+    </div>
+    {%if specialists%}
+        <div class="specialists-block" id="specialists">
+            {%for river in river_count %}
+                {% if forloop.counter|divisibleby:2 %}
+                    <div class="river3 hide-mobile second" style="top: {{margin_counter.inc}}px;"></div>
+                {%else%}                    
+                    <div class="river3 hide-mobile first" style="top: {{margin_counter.inc}}px;"></div>
+                {%endif%}                        
+            {%endfor%}
+
+            {%for river in river_mobile_count%}            
+                <div class="river3 show-mobile" style="top: {{margin_counter_mobile.inc}}px;"></div>
+            {%endfor%}
+            
+            
+            
+            <div class="specialists">
+                {%for specialist in specialists %}
+                    <div class="specialist-wrap margin">
+                        <div class="bg"></div>
+                        <div class="specialist-block">
+                            
+                            <div class="avatar" style="background-image: url({{specialist.image.url}});"></div>
+
+                            <div class="name">{{specialist.name}}</div>
+
+                            <div class="rating">
+                                <div class="rateit" data-rateit-value="{{specialist.rating}}" data-rateit-ispreset="true" data-rateit-readonly="true" data-rateit-mode="font"  style="font-size:35px"></div>
+                            </div>
+
+                            <div class="country-block">
+                                <div class="flag" style="background-image: url(/static/img/test_flag.png);"></div>
+                                <div class="country">{{specialist.country.country}}, {{specialist.city.name}}</div>
+                            </div>
+
+                            <div class="description">{{specialist.description}}</div>
+                            <div class="lections">
+                                Проведено лекций: {{specialist.count_of_lections}}
+                            </div>
+                        </div>
+                    </div>
+                {%endfor%}
+                {% for block in fake_blocks_count %}
+                    <div class="specialist-wrap-fake hide-mobile"></div>
+                {%endfor%}
+            </div>
+            {% if pages|length > 1%}
+                <div class="navigation">
+                    <ul>
+                        {% for page in pages%}
+                            {% if page == specialists.number %}
+                                <li class="page-current">
+                                    <span>{{page}}</span>
+                                </li>
+                            {% else %}
+                                <li class="page-nav">
+                                    <a href="?country={{country.id}}&city={{city.id}}&rating={{rating}}&page={{page}}"> {{page}} </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {%endif%}
+        </div>
+    {%else%}
+        <div class="no-found-block">Ничего не найдено!</div>
+    {%endif%}
+    
+{%endblock%}

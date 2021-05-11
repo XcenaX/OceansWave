@@ -1,0 +1,13 @@
+boto3
+botocore
+dj-database-url
+Django
+django-filter
+django-storages
+djangorestframework
+djangorestframework-simplejwt
+mysql-connector-python
+mysqlclient
+Pillow
+requests
+requests-toolbelt

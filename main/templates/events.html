@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{%load static%}
+
+{%block styles%}
+    <script src="{%static 'js/custom-select.js'%}"></script>
+    {%if not events%}
+        <style>
+            .wrap{
+                height: -webkit-fill-available;
+            }
+        </style>
+    {%endif%}
+    <style>
+        .closest-event-block{
+            width: 100%;
+            margin-top: 150px;
+            margin-bottom: 150px;
+        }
+        @media(max-width: 900px){
+            .closest-event-block{
+                margin-top: 50px !important;
+                margin-bottom: 50px !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="{%static 'css/events.css'%}">
+
+{%endblock%}
+
+{%block content%}
+
+    <div class="sort-block">
+        <div class="title hide-mobile">Сортировка</div>
+        <div class="sorts">
+            <div class="input-block">
+                <input type="text" class="name" value="{{name}}"  placeholder="Название">
+                <button class="search" onclick="location='?name='+this.parentElement.children[0].value+'&price={{price}}'"></button>
+            </div>
+            
+            <label class="select" style="width: 25%;">                
+                <select class="sort-quests" onchange="location = this.value;">   
+                    <option disabled="disabled" selected="selected" style="display:none;" value="name={{name}}&price=">Цена</option>                                         
+                    <option {%if price == 'true' %} selected {%endif%} value="?name={{name}}&price=true">По возрастанию</option>
+                    <option {%if price == 'false' %} selected {%endif%} value="?name={{name}}&price=false">По убыванию</option>
+                </select>
+            </label>  
+                
+        </div>
+    </div>
+    {%if events%}
+        <div class="closest-event-block">            
+            {%for river in river_count %}
+                {% if forloop.counter|divisibleby:2 %}
+                    <div class="river3 hide-mobile second" style="top: {{margin_counter.inc}}px;"></div>
+                {%else%}                    
+                    <div class="river3 hide-mobile first" style="top: {{margin_counter.inc}}px;"></div>
+                {%endif%}                        
+            {%endfor%}
+
+            {%for river in river_mobile_count%}            
+                <div class="river3 show-mobile" style="top: {{margin_counter_mobile.inc}}px;"></div>
+            {%endfor%}
+            
+            {%for event in events%}            
+                <div class="event hide-mobile">
+                    <div class="image" style="background-image: url({%if event.image %}{{event.image.url}}{%else%}{%static 'img/default_img.png'%}{%endif%});"></div>
+                    <div class="text-block">
+                        <div class="left-side">
+                            <div class="title">
+                                {{event.name}} 
+                                {%if event.pdf_file%}
+                                    <a href="{{event.pdf_file.url}}" download>
+                                        <div class="download-pdf hide-mobile" title="Скачать" ></div>
+                                    </a>
+                                {%endif%}
+                            </div>
+                            <div class="info-block">
+                                <div class="left-side">
+                                    <div class="item">
+                                        <div class="key">Дата: </div>
+                                        <div class="value">{{event.start_date|date:"d.m.Y"}}</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="key">Лектор: </div>
+                                        <div class="value">{{event.teacher}}</div>
+                                    </div>
+                                </div>
+                                <div class="left-side" style="margin-left: 25px;">
+                                    <div class="item">
+                                        <div class="key">Время:</div>
+                                        <div class="value">{{event.start_time|date:'H:i'}} - {{event.end_time|date:'H:i'}}</div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="key">Стоимость: </div>
+                                        <div class="value">{{event.price}}тг</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <div class="buy-block">
+                                <div class="buttons">
+                                    <div class="order">
+                                        Забронировать
+                                        <div class="arrow hide-mobile"></div>
+                                    </div>
+                                    <div class="left-places">Осталось мест: {{event.places_left}}</div>
+                                    
+                                    <div class="down-arrow-block show-mobile">
+                                        <div class="arrow"></div>
+                                    </div>
+                                </div>
+                                {%if event.qr_image%}
+                                    <div class="qr" style="background-image: url({{event.qr_image.url}});"></div>
+                                {%endif%}
+                            </div>
+                        </div>                        
+                        <div class="description-block">{{event.description}}</div>
+                    </div>
+                </div>
+                <div class="event show-mobile">
+                    {%if event.pdf_file%}
+                    <a href="{{event.pdf_file.url}}" download>
+                        <div class="download-pdf hide-mobile" title="Скачать" ></div>
+                    </a>
+                    {%endif%}
+                    
+                    <div class="image" style="background-image: url({%if event.image %}{{event.image.url}}{%else%}{%static 'img/default_img.png'%}{%endif%});"></div>
+                    <div class="text-block">
+                        <div class="title">{{event.name}}</div>
+                        <div class="info-block">
+                            <div class="left-side">
+                                <div class="item">
+                                    <div class="key">Дата: </div>
+                                    <div class="value">{{event.start_date|date:"d.m.Y"}}</div>
+                                </div>
+                                <div class="item">
+                                    <div class="key">Лектор: </div>
+                                    <div class="value">{{event.teacher}}</div>
+                                </div>
+                            </div>
+                            <div class="left-side" style="margin-left: 25px;">
+                                <div class="item">
+                                    <div class="key">Время:</div>
+                                    <div class="value">{{event.start_time|date:'H:i'}} - {{event.end_time|date:'H:i'}}</div>
+                                </div>
+                                <div class="item">
+                                    <div class="key">Стоимость: </div>
+                                    <div class="value">{{event.price}}тг</div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="description-block scrollable">{{event.description}}</div>
+        
+                        <div class="buy-block">
+                            <div class="buttons">
+                                <div class="left-places">Осталось мест: {{event.places_left}}</div>
+                                <div class="order">
+                                    Забронировать
+                                    <div class="arrow hide-mobile"></div>
+                                </div>
+                                <div class="down-arrow-block show-mobile">
+                                    <div class="arrow"></div>
+                                </div>
+                            </div>
+                            <div class="qr" style="background-image: url({%if event.qr_image %}{{event.qr_image.url}}{%else%}{%static 'img/default_img.png'%}{%endif%});"></div>
+                        </div>
+                    </div>
+                </div>
+            {%endfor%}
+        </div>
+        {% if pages|length > 1%}
+                <div class="navigation">
+                    <ul>
+                        {% for page in pages%}
+                            {% if page == specialists.number %}
+                                <li class="page-current">
+                                    <span>{{page}}</span>
+                                </li>
+                            {% else %}
+                                <li class="page-nav">
+                                    <a href="?name={{name}}&price={{price}}&page={{page}}"> {{page}} </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            {%endif%}
+    {%else%}
+        <div class="no-found-block">Ничего не найдено!</div>
+    {%endif%}
+    
+{%endblock%}
