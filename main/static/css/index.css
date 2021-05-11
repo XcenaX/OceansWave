@@ -1710,6 +1710,9 @@ label.select:after{
     .river3.hide-mobile.first, .river3.hide-mobile.second{
         height: 570px !important;
     }
+    .buttons .left-places, .buttons .order{
+        font-size: 12px;
+    }
 }
 
 @media(max-width: 1400px) {
@@ -1766,7 +1769,7 @@ label.select:after{
         height: 520px !important;
     }
     .buttons .left-places, .buttons .order{
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
