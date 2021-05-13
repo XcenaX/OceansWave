@@ -23,7 +23,7 @@ class Event(models.Model):
     pdf_file = models.FileField(storage=ClientDocsStorage(), blank=True, null=True)
     qr_image = models.FileField(storage=ClientDocsStorage(), blank=True, null=True)
     expired = models.BooleanField(default=False)
-
+    location = models.TextField(default="")
     def get_expired(self):
         if self.start_date < date.today():
             self.expired = True

@@ -148,5 +148,6 @@
     }
     .input-block button, .input-block button:focus{
         height: 50px;
+        width: 25%;
     }
 }

@@ -95,13 +95,19 @@
                                         <div class="value">{{event.price}}тг</div>
                                     </div>
                                 </div>
+                                <div class="left-side full" >
+                                    <div class="item full">
+                                        <div class="key">Локация:</div>
+                                        <div class="value">{{event.location}}</div>
+                                    </div>                        
+                                </div>
                             </div>
                         </div>
                         <div class="right-side">
                             <div class="buy-block">
                                 <div class="buttons">
                                     <div class="order">
-                                        <div class="text">Забронировать</div>
+                                        <div class="text">Отсканируй Qr</div>
                                         
                                     </div>
                                     <div class="left-places">
@@ -114,6 +120,8 @@
                                 </div>
                                 {%if event.qr_image%}
                                     <div class="qr" style="background-image: url({{event.qr_image.url}});"></div>
+                                {%else%}
+                                    <div class="qr" style="background-image: url();"></div>
                                 {%endif%}
                             </div>
                         </div>                        
@@ -151,6 +159,12 @@
                                     <div class="value">{{event.price}}тг</div>
                                 </div>
                             </div>
+                            <div class="left-side full" >
+                                <div class="item full">
+                                    <div class="key">Локация:</div>
+                                    <div class="value">{{event.location}}</div>
+                                </div>                        
+                            </div>
                         </div>
         
                         <div class="description-block scrollable">{{event.description}}</div>
@@ -159,7 +173,7 @@
                             <div class="buttons">
                                 <div class="left-places">Осталось мест: {{event.places_left}}</div>
                                 <div class="order">
-                                    Забронировать
+                                    Отсканируй Qr
                                     
                                 </div>
                                 <div class="down-arrow-block show-mobile">

@@ -24,7 +24,9 @@
         <div class="socials hide-mobile">
             <div class="facebook item"></div>
             <div class="twitter item"></div>
-            <div class="instagram item no-margin-right"></div>
+            <div class="instagram item"></div>
+            <div class="youtube item"></div>
+            <div class="telegram item no-margin-right"></div>
         </div>
         <div class="arrow-down hide-mobile" id="hover-arrow"></div>
         <div class="logos">
@@ -79,6 +81,12 @@
                             <div class="value">{{closest_event.price}}тг</div>
                         </div>
                     </div>
+                    <div class="left-side full" >
+                        <div class="item full">
+                            <div class="key">Локация:</div>
+                            <div class="value">{{closest_event.location}}</div>
+                        </div>                        
+                    </div>
                 </div>
 
                 <div class="description-block scrollable">{{closest_event.description}}</div>
@@ -87,8 +95,8 @@
                     <div class="buttons">
                         <div class="left-places">Осталось мест: {{closest_event.places_left}}</div>
                         <div class="order">
-                            Забронировать
-                            <div class="arrow hide-mobile"></div>
+                            Отсканируй Qr
+                            
                         </div>
                         <div class="down-arrow-block show-mobile">
                             <div class="arrow"></div>
@@ -146,7 +154,9 @@
             <div class="description">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
             </div>
-            <div class="button">Кнопка</div>
+            <a href="{%url 'main:events'%}">
+                <div class="button">Список мероприятий</div>
+            </a>            
         </div>
     </div>
 
@@ -158,23 +168,23 @@
         <div class="cases">
             <div class="case">
                 <div class="image image1"></div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and </div>
+                <div class="text">Ежедневный поток информации от консультантов</div>
             </div>
             <div class="case">
                 <div class="image image2"></div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and </div>
+                <div class="text">Акселерация. Многократное ускорение на пути к достижению цели.</div>
             </div>
             <div class="case">
                 <div class="image image3"></div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and </div>
+                <div class="text">Новое сильное окружение, которое будет тянуть вас вверх и сделает успешнее.</div>
             </div>
             <div class="case no-margin-bottom">
                 <div class="image image4"></div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and </div>
+                <div class="text">Business Networking как новый формат яркой жизни.</div>
             </div>
             <div class="case no-margin-bottom">
                 <div class="image image5"></div>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and </div>
+                <div class="text">Ментор, который сэкономит уйму времени на самообразование</div>
             </div>
         </div>
     </div>
@@ -215,8 +225,8 @@
 
     <div class="specialists-block" id="specialists">
         <div class="river3"></div>
-        <div class="river3 show-mobile" style="top: 800px;"></div>
-        <div class="river3 show-mobile" style="top: 1600px;"></div>
+        <div class="river3 show-mobile" style="top: 600px;"></div>
+        <div class="river3 show-mobile" style="top: 1300px;"></div>
         <div class="l-coin1 hide-mobile"></div>
         <div class="l-coin2 hide-mobile"></div>
         
@@ -280,7 +290,7 @@
                 </div>
                 <div class="info-block">
                     <div class="name">Mark Lebedev</div>
-                    <div class="description">
+                    <div class="description scrollable">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque at maxime consequuntur sapiente, perspiciatis veritatis doloribus adipisci totam odio beatae, excepturi ea, architecto et? Enim illum voluptas beatae qui suscipit.
                     </div>
                     <div class="date">03.05.2021</div>
@@ -292,7 +302,7 @@
                 </div>
                 <div class="info-block">
                     <div class="name">Mark Lebedev</div>
-                    <div class="description">
+                    <div class="description scrollable">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque at maxime consequuntur sapiente, perspiciatis veritatis doloribus adipisci totam odio beatae, excepturi ea, architecto et? Enim illum voluptas beatae qui suscipit.
                     </div>
                     <div class="date">03.05.2021</div>
@@ -304,7 +314,7 @@
                 </div>
                 <div class="info-block">
                     <div class="name">Mark Lebedev</div>
-                    <div class="description">
+                    <div class="description scrollable">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque at maxime consequuntur sapiente, perspiciatis veritatis doloribus adipisci totam odio beatae, excepturi ea, architecto et? Enim illum voluptas beatae qui suscipit.
                     </div>
                     <div class="date">03.05.2021</div>
@@ -317,7 +327,9 @@
         <div class="info-block">
             <div class="title">Бронируй сейчас!</div>
             <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum tempore voluptatibus quis omnis laborum consequatur, neque quidem ratione consectetur amet repellendus aliquid saepe laudantium quos, labore necessitatibus, aut voluptatum nobis.</div>
-            <div class="button">Кнопка</div>
+            <a href="{%url 'main:events'%}">
+                <div class="button">Список мероприятий</div>
+            </a>
         </div>
         <div class="image"></div>
     </div>
