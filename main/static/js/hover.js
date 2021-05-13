@@ -83,4 +83,14 @@ $(document).ready(function(){
     $("#hover-arrow")[0].remove();
     return false;
   });
+  setTimeout(function(){
+    $("#telegram-link")[0].style.right = "8vh";
+    $("#close-telegram")[0].style.right = "4vh";
+    $('#close-telegram').on('click', function() {
+      $("#telegram-link")[0].style.right = "-26vh";
+      $("#close-telegram")[0].style.right = "-4vh";
+      return false;
+    });
+  }, 1000);
+  
 });
