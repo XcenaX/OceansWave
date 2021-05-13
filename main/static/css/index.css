@@ -465,6 +465,7 @@ a{
     height: auto;
     display: inline-block;
     vertical-align: top;
+    position: relative;
 }
 
 
@@ -486,13 +487,17 @@ a{
 
 .buttons .left-places, .buttons .order{
     width: 100%;
-    height: 40px;
+    height: 40%;
     text-align: center;
     color: white;
     font-weight: 500;
     font-size: 17px;
     line-height: 20px;
-    padding-top: 20px;
+    /* padding-top: 20px; */
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .buttons .left-places{
@@ -510,7 +515,8 @@ a{
     background: #FFB74B;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 6px;
-    position: relative;
+    position: absolute;
+    bottom: 0px;
 }
 .buttons .order:active{
     background: #d1963e;
@@ -534,7 +540,6 @@ a{
 .buy-block .qr{
     width: 25%;
     display: inline-block;
-    margin-left: 9%;
     padding-bottom: 25%;
     background-image: url(/static/img/test_qr.png);
     background-size: contain;
@@ -1400,6 +1405,7 @@ a{
     margin-left: 20px;
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .footer .social .item.no-margin{
@@ -1419,11 +1425,11 @@ a{
 }
 
 .footer .social .youtube{
-    background-image: url(/static/img/youtube.svg);
+    background-image: url(/static/img/youtube_white.svg);
 }
 
 .footer .social .telegram{
-    background-image: url(/static/img/telegram.svg);
+    background-image: url(/static/img/telegram_white.svg);
 }
 
 .mobile-header{
@@ -1526,12 +1532,12 @@ a{
     justify-content: space-between;
     padding-bottom: 50px;
     height: 34px;
-    width: 50%;
+    width: 90%;
 }
 
 .mobile-menu .social .item{
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -1544,6 +1550,12 @@ a{
 }
 .mobile-menu .social .item.instagram{
     background-image: url(/static/img/instagram_white.svg);
+}
+.mobile-menu .social .item.youtube{
+    background-image: url(/static/img/youtube_white.svg);
+}
+.mobile-menu .social .item.telegram{
+    background-image: url(/static/img/telegram_white.svg);
 }
 
 .mobile-footer{
@@ -1724,7 +1736,7 @@ label.select:after{
         min-height: 170px;
     }
     .buy-block .buttons{
-        width: 50%;
+        width: 60%;
     }
 }
 
@@ -1877,7 +1889,7 @@ label.select:after{
         line-height: 16px;
     }
     .buy-block .buttons{
-        width: 50%;
+        width: 60%;
     }
     .buttons .left-places{
         margin-bottom: 10px;
@@ -2030,8 +2042,6 @@ label.select:after{
     }
     .buttons .left-places, .buttons .order{
         font-size: 10px;
-        height: 30px;
-        padding-top: 10px;
     }
     .title-block .title-button{
         width: 200px;
@@ -2100,6 +2110,7 @@ label.select:after{
     .closest-event-block .title{
         font-size: 20px;
         margin-bottom: 20px;
+        line-height: 32px;
     }
     .closest-event-block .event{
         padding: 20px;
