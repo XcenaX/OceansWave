@@ -20,12 +20,12 @@
 
 .event.hide-mobile .text-block .title .download-pdf{
     right: -55px ;
-    top: 8px  ;
+    top: 0px;
+    height: 100%;
 }
 
 .event.hide-mobile .text-block .description-block{
     width: 100%;
-    margin-top: 20px;
 }
 
 .event.hide-mobile .text-block>.left-side{
@@ -44,10 +44,28 @@
 
 .event.hide-mobile .buy-block{
     margin-top: 0px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .event.hide-mobile .buttons .left-places{
     margin-bottom: 0px;
+}
+
+.event.hide-mobile .buttons .left-places, .event.hide-mobile .buttons .order {
+    width: 100%;
+    height: 40%;
+    max-height: 40% !important;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 0px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .event.hide-mobile .buttons .order{
@@ -63,9 +81,14 @@
 }
 
 .event.hide-mobile .buy-block .qr{
-    width: 48%;
+    width: 40%;
     margin-left: 0%;
-    padding-bottom: 48%;
+    padding-bottom: 40%;
+    height: 0px;
+}
+
+.event.show-mobile{
+    margin-bottom: 50px;
 }
 
 .sorts .input-block{
@@ -80,14 +103,14 @@
 
 .input-block button, .input-block button:focus{
     width: 20%;
-    height: 50px;
+    height: 100%;
     position: absolute;
     top: 0px;
     right: 0px;
     background: #717DEB;
     border-radius: 6px;
     background-image: url(/static/img/search.svg);
-    background-size: 50%;
+    background-size: 40%;
     background-position: center;
     background-repeat: no-repeat;
     border: none;
@@ -95,9 +118,21 @@
     cursor: pointer;
 }
 
-.buy-block .buttons{
-    width: 50%;
+.event.hide-mobile .buy-block .buttons{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+.text-block .info-block{
+    margin-top: 30px;
+}
+
+@media(max-width: 1400px){
+    .text-block .info-block{
+        margin-top: 15px;
+    }
 }
 
 @media(max-width:900px){
@@ -111,5 +146,7 @@
         width: 100%;
         padding-right: 25% !important;
     }
-    
+    .input-block button, .input-block button:focus{
+        height: 50px;
+    }
 }

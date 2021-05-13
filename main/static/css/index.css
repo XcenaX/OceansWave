@@ -67,6 +67,8 @@ a{
     display: inline-block;
     margin-right: 70px;
     cursor: pointer;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .no-margin-right{
@@ -79,11 +81,9 @@ a{
     line-height: 19px;
 }
 
-.item .text:hover{
-    color: #1D3588;
-
-    font-weight: 500;
-    font-size: 14px;
+.menu-block .item:hover{
+    color: #16296b;
+    border-bottom: 2px solid #253D92;
 }
 
 .item.active>.text{
@@ -150,7 +150,7 @@ a{
 
 .title-block{
     width: 40%;
-    padding-top: 9%;
+    padding-top: 7%;
 }
 
 .title-block .under-title {
@@ -238,9 +238,9 @@ a{
 .logos .logo1{
     background: #1D3588;
     border-radius: 11px;
-    padding: 7px 20px 7px 20px;
+    padding: 10px 20px 10px 20px;
     text-align: center;
-    width: 161px;
+    width: 140px;
 }
 
 .logo1 .logo{
@@ -257,6 +257,7 @@ a{
 .logo1 .logo, .logos .logo2{
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .social-block .arrow-down{
@@ -268,6 +269,7 @@ a{
     margin-top: 40px;
     position: absolute;
     left: 50%;
+    transition: 1s ease-in-out;
 }
 
 
@@ -338,7 +340,7 @@ a{
     line-height: 20px;
     text-align: justify;
     font-weight: 500;
-    max-height: 200px;
+    max-height: 186px;
     min-height: 186px;
     overflow: auto;
     text-align: left;
@@ -354,6 +356,8 @@ a{
     display: inline-block;
     vertical-align: middle;
 }
+
+
 
 .left-side .key{
     color: #1D3588;
@@ -395,7 +399,8 @@ a{
 .buy-block{
     width: 100%;
     margin-top: 20px;
-    text-align: left;
+    display: flex;
+    justify-content: space-between;
 }
 
 .buy-block .buttons{
@@ -404,6 +409,8 @@ a{
     display: inline-block;
     vertical-align: top;
 }
+
+
 
 .buy-block .buttons .down-arrow-block{
     width: 100%;
@@ -647,7 +654,8 @@ a{
     padding-bottom: 40%;
     display: inline-block;
     background-image: url(/static/img/title.png);
-    background-size: contain;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     vertical-align: top;
 }
@@ -851,7 +859,7 @@ a{
     text-align: right;    
     color: #1D3588;
     width: 100%;
-    text-align: center;
+    text-align: right;
     margin-bottom: 60px;
 }
 
@@ -872,17 +880,20 @@ a{
     position: relative;
     padding: 5%;
     cursor: pointer;
+    transition: 0.2s ease-out;
 }
+
+
+
+/* .info-block .items-block .item:hover .bg-block{
+    background: linear-gradient(101.26deg, rgba(37, 61, 146, 0.5) 2.1%, rgba(68, 95, 188, 0.5) 88.51%);
+    transition: 0.5s;
+} 
 
 .info-block .items-block .item:hover{
     background: linear-gradient(101.26deg, #253D92 2.1%, #445FBC 88.51%);
-    transition: 0.1s;
-}
-
-.info-block .items-block .item:hover .bg-block{
-    background: linear-gradient(101.26deg, rgba(37, 61, 146, 0.5) 2.1%, rgba(68, 95, 188, 0.5) 88.51%);
-    transition: 0.1s;
-} 
+    transition: 0.5s !important;
+} */
 
 .info-block .items-block .item.no-margin-bottom{
     margin-bottom: 0px;
@@ -908,6 +919,7 @@ a{
     z-index: -1;
     left: 2.5%;
     bottom: -6%;
+    transition: 0.2s ease-out;
 }
 
 .info-block .items-block .item .title{
@@ -1562,14 +1574,16 @@ label.select:after{
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
     right: 0px;
-    top: 20%;
+    top: 0px;
     width: 20px;
     height: 20px;
-    padding: 5px;
+    padding: 0px;
     position: absolute;
     z-index: 5;
     pointer-events: none;
     font-weight: bold;
+    height: 100%;
+    width: 20%;
 }
 
 
@@ -1625,7 +1639,57 @@ label.select:after{
     font-weight: 300;
 }
 
+@media(max-width: 1720px){
+    .text-block .title{
+        font-size: 25px;
+        line-height: 28px;
+        margin-bottom: 7px;
+    }
+    .left-side .key, .left-side .value{
+        font-size: 17px;
+        line-height: 20px;
+    }
+    .left-side .item{
+        margin-bottom: 15px;
+    }
+    .text-block .description-block{
+        font-size: 14px;
+        line-height: 17px;
+        max-height: 170px;
+        min-height: 170px;
+    }
+    .buy-block .buttons{
+        width: 50%;
+    }
+}
+
 @media(max-width: 1600px){
+    .sort-block .sorts{
+        height: 40px;
+    }
+    .specialists-block .l-coin1{
+        right: -12%;
+        top: -15%;
+        width: 100px;
+        height: 125px;
+    }
+    .specialists-block .l-coin2{
+        width: 200px;
+        height: 250px;
+        right: -10%;
+        top: 0%;
+    }
+    .update-block .text-block .description{
+        font-size: 15px;
+        line-height: 18px;
+    }
+    .update-block .text-block .title{
+        font-size: 20px;
+        line-height: 23px;
+    }
+    .title-block .under-title{
+        font-size: 14px;
+    }
     .logos-block .logo{
         width: 150px;
     }
@@ -1638,24 +1702,27 @@ label.select:after{
         height: 30px;
     }
     .logos .logo1{
-        padding: 7px 20px 0px 20px;
+        padding: 5px 15px 5px 15px;
         width: 80px;
+        
     }
     .logos .logo2{
         width: 100px;
     }
     .events-button{
-        font-size: 14px;
+        font-size: 11px;
         padding-top: 8px;
         padding-bottom: 8px;
-        padding-left: 45px;
-        padding-right: 45px;
+        padding-left: 35px;
+        padding-right: 35px;
+        height: 20px;
+        margin-top: 10px;
     }
     .teach-block .info-block .title{
-        font-size: 40px;
+        font-size: 35px;
     }
     .specialists-block .title{
-        font-size: 50px;
+        font-size: 40px;
     }
     .book-now .info-block .title{
         font-size: 40px;
@@ -1670,7 +1737,7 @@ label.select:after{
         padding-top: 15px;
     }
     .review-block .title{
-        font-size: 50px;
+        font-size: 35px;
     }
     .partner .info-block .description{
         font-size: 13px;
@@ -1683,7 +1750,7 @@ label.select:after{
         font-size: 13px;
     }
     .why-we-block .title{
-        font-size: 45px;
+        font-size: 35px;
     }
     .title-block .title{
         font-size: 50px;
@@ -1712,10 +1779,129 @@ label.select:after{
     }
     .buttons .left-places, .buttons .order{
         font-size: 12px;
+        
+    }
+    .title-block .title-button{
+        width: 200px;
+        padding-top: 9px;
+        height: 28px;
+        font-size: 14px;
+    }
+    .closest-event-block .event{
+        padding: 50px;
+    }
+    .text-block .title{
+        font-size: 30px;
+        line-height: 34px;
+        margin-bottom: 10px;
+    }
+    .left-side .key, .left-side .value{
+        font-size: 17px;
+        line-height: 20px;
+    }
+    .left-side .item{
+        margin-bottom: 10px;
+    }
+    .info-block .left-side{
+        margin-left: 0px !important;
+    }
+    .text-block .description-block{
+        font-size: 14px;
+        max-height: 150px !important;
+        min-height: 100px;
+        line-height: 16px;
+    }
+    .buy-block .buttons{
+        width: 50%;
+    }
+    .buttons .left-places{
+        margin-bottom: 10px;
+    }
+    .last-updates-block>.title{
+        font-size: 40px;
+    }
+    .socials .item{
+        width: 30px;
+        height: 30px;
     }
 }
 
+
+
 @media(max-width: 1400px) {
+    .first-block .image-block{
+        height: 550px;
+    }
+    .info-block .items-block .item .title{
+        font-size: 17px;
+        line-height: 20px;
+        margin-bottom: 10px;
+    }
+    .info-block .items-block .item .text{
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .info-block .items-block .item{
+        padding: 2%;
+        height: 125px;
+    }
+    .case .text{
+        font-size: 12px;
+    }
+    .about-block .text-block .button{
+        font-size: 14px;
+        height: 30px;
+        padding-top: 15px;
+    }
+    .update-block .text-block .description{
+        font-size: 13px;
+        line-height: 16px;
+    }
+    .update-block .text-block .button, .update-block .button{
+        height: 30px;
+        padding-top: 15px;
+        font-size: 14px;
+    }
+    .update-block .text-block .title{
+        font-size: 16px;
+        line-height: 19px;
+    }
+    .last-updates-block>.title{
+        font-size: 30px;
+    }
+    .buy-block .qr{
+        width: 90px;
+        padding-bottom: 90px;
+    }
+    .closest-event-block .gray-coin1{
+        width: 150px;
+        height: 150px;
+        top: 7%;
+    }
+    .closest-event-block .gray-coin2{
+        width: 250px;
+        height: 250px;
+        top: 25%;
+    }
+    .closest-event-block .orange-coin1{
+        width: 180px;
+        height: 240px;
+    }
+    .closest-event-block .orange-coin2{
+        right: -3%;
+        bottom: -57%;
+    }
+    .see-events-block .text{
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .see-events-block .arrow{
+        width: 70px;
+        height: 10px;
+    }
+    .title-block .under-title{
+        font-size: 12px;
+    }
     .order .arrow{
         top: 47%;
         height: 12%;
@@ -1724,43 +1910,52 @@ label.select:after{
     .buttons .order, .buttons .left-places{
         font-size: 14px;
     }
-
+    .event .text-block{
+        margin-top: 5px;
+    }
     .event .text-block .title{
-        font-size: 29px;
+        font-size: 20px;
     }
     .item .key, .item .value{
         font-size: 17px;
     }
     .event .text-block .description-block{
-        font-size: 14px;
+        font-size: 12px;
+        line-height: 14px;
     }
     .closest-event-block .title{
         font-size: 40px;
     }
 
     .about-block .text-block .title{
-        font-size: 45px;
+        font-size: 35px;
         line-height: 40px;
     }
     .about-block .text-block .description{
-        font-size: 14px;
+        font-size: 12px;
         margin-top: 30px;
         margin-bottom: 30px
     }
     .title-block .title{
-        font-size: 50px;
+        font-size: 36px;
+        line-height: 55px;
+    }
+    .title-block{
+        padding: 5%;
     }
     .country-block .country{
         font-size: 12px;
     }
     .specialist-block .description{
         font-size: 12px;
+        max-height: 175px;
+        min-height: 175px;
     }
     .specialist-block .lections{
         font-size: 12px;
     }
     .specialist-block .name{
-        font-size: 18px;
+        font-size: 16px;
     }
     .no-found-block {
         font-size: 25px;
@@ -1770,6 +1965,40 @@ label.select:after{
     }
     .buttons .left-places, .buttons .order{
         font-size: 10px;
+        height: 30px;
+        padding-top: 10px;
+    }
+    .title-block .title-button{
+        width: 200px;
+        padding-top: 9px;
+        height: 28px;
+        font-size: 14px;
+    }
+    .closest-event-block .event{
+        padding: 40px;
+    }
+    .text-block .title{
+        font-size: 25px;
+        line-height: 29px;
+        margin: 0px;
+    }
+    .left-side .key, .left-side .value{
+        font-size: 11px;
+        line-height: 12px;
+        margin-right: 2px;
+    }
+    .left-side .item{
+        margin-bottom: 5px;
+    }
+    .info-block .left-side{
+        margin-left: 0px !important;
+    }
+    .text-block .description-block{
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .specialist-block{
+        padding: 25px;
     }
 }
 
@@ -1843,6 +2072,7 @@ label.select:after{
     .left-side .item{
         display: flex;
         justify-content: space-between;
+        margin-bottom: 15px;
     }
     .item .key, .item .value{
         font-size: 14px;

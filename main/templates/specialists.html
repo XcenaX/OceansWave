@@ -26,7 +26,7 @@
         <div class="sorts">
             <label class="select" style="width: 25%;">                
                 <select class="sort-quests" onchange="location = this.value;">
-                    <option disabled="disabled" selected="selected" style="display:none;" value="?country=&rating={{rating}}">Страна</option>
+                    <option selected value="?country=&rating={{rating}}">Страна</option>
                     {% for current_country in countries%}
                         <option {%if country.id == current_country.id %} selected {%endif%} value="?country={{current_country.id}}&rating={{rating}}">{{current_country.country}}</option>
                     {%endfor%}
@@ -36,7 +36,7 @@
             {%if country and country != ''%}
                 <label class="select" style="width: 25%;">                
                     <select class="sort-quests" onchange="location = this.value;">                        
-                        <option disabled="disabled" selected="selected" style="display:none;" value="?country={{country.id}}&city=&rating={{rating}}">Город</option>
+                        <option selected value="?country={{country.id}}&city=&rating={{rating}}">Город</option>
                         {%for current_city in cities%}
                             <option {%if city.id == current_city.id %} selected {%endif%} value="?country={{country.id}}&city={{current_city.id}}&rating={{rating}}">{{current_city.name}}</option>
                         {%endfor%}
@@ -45,7 +45,7 @@
             {%endif%}
             <label class="select" style="width: 25%;">                
                 <select class="sort-quests" onchange="location = this.value;">   
-                    <option disabled="disabled" selected="selected" style="display:none;" value="?country={{country.id}}&city={{current_city.id}}&rating=">Рейтинг</option>                                         
+                    <option selected  value="?country={{country.id}}&city={{city.id}}&rating=">Рейтинг</option>                                         
                     <option {%if rating == 'true' %} selected {%endif%} value="?country={{country.id}}&city={{city.id}}&rating=true">По возрастанию</option>
                     <option {%if rating == 'false' %} selected {%endif%} value="?country={{country.id}}&city={{city.id}}&rating=false">По убыванию</option>
                 </select>

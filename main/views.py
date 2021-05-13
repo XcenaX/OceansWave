@@ -6,8 +6,8 @@ from main.models import *
 from main.modules.functions import margin_counter, get_paginated_blogs
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-COUNT_SPECIALISTS_ON_PAGE = 6
-COUNT_EVENTS_ON_PAGE = 1
+COUNT_SPECIALISTS_ON_PAGE = 9
+COUNT_EVENTS_ON_PAGE = 9
 
 class Index(View):
     def get(self, request):
@@ -78,7 +78,7 @@ class Specialists(View):
         return render(request, "specialists.html", {
             "specialists": paginated_blocks,
             "pages": pages,
-            "margin_counter": margin_counter(-1000, 900),
+            "margin_counter": margin_counter(-800, 700),
             "margin_counter_mobile": margin_counter(-750, 750),
             "river_count": river_count,
             "river_mobile_count": river_mobile_count,

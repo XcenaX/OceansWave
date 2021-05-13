@@ -24,7 +24,7 @@
                 -moz-text-fill-color: transparent;
             }
         </style>
-        
+        <script src="{%static 'js/hover.js'%}"></script>
         {% block styles %}
 
         {% endblock %}
@@ -44,25 +44,25 @@
                     </div>
                 </a>                
                 <div class="menu-block">
-                    <div class="item">
+                    <div class="item scrollto">
                         <a href="/#">
                             <div class="text">Главная</div>
                         </a>                    
                         <div class="item-underline"></div>
                     </div>
-                    <div class="item">
+                    <div class="item scrollto">
                         <a href="/#about">
                             <div class="text">О нас</div>
                         </a>                    
                         <div class="item-underline"></div>
                     </div>
-                    <div class="item">
+                    <div class="item scrollto">
                         <a href="/#why">
                             <div class="text">Преимущества</div>
                         </a>                    
                         <div class="item-underline"></div>
                     </div>
-                    <div class="item no-margin-right">
+                    <div class="item no-margin-right scrollto">
                         <a href="/#specialists">
                             <div class="text">Специалисты</div>
                         </a>
@@ -84,17 +84,17 @@
     
             <div class="mobile-menu show-mobile-flex" id="nav">
                     <div class="button" onclick="open_close_Nav()"></div>
-                    <div class="menu">
-                        <a href="#">
+                    <div class="menu scrollto">
+                        <a href="/#">
                             <div class="item">Главная</div>
                         </a>
-                        <a href="#about">
+                        <a href="/#about">
                             <div class="item">О нас</div>
                         </a>
-                        <a href="#why">
+                        <a href="/#why">
                             <div class="item">Преимущества</div>
                         </a>
-                        <a href="#specialists">
+                        <a href="/#specialists">
                             <div class="item">Специалисты</div>
                         </a>
                     </div>
@@ -129,7 +129,7 @@
 {%block footer%}
     <div class="footer hide-mobile">
         <div class="bg"></div>
-        <div class="menu">
+        <div class="menu scrollto">
             <a href="/#">Главная</a>
             <a href="/#about">О нас</a>
             <a href="/#why">Преимущества</a>
@@ -149,6 +149,51 @@
     </div>
     <div class="mobile-footer show-mobile"></div>
 {%endblock%}
+
+<style type="text/css">
+    #hellopreloader>p {
+    display: none;
+    }
+
+    #hellopreloader_preload {
+    display: block;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100px;
+    background: white url({%static 'img/preloader.gif'%}) center center no-repeat;
+    background-size: 20%;
+    }
+</style>
+<div id="hellopreloader">
+    <div id="hellopreloader_preload"></div>
+</div>
+<script type="text/javascript">
+    var hellopreloader = document.getElementById("hellopreloader_preload");
+
+    function fadeOutnojquery(el) {
+    el.style.opacity = 1;
+    var interhellopreloader = setInterval(function () {
+        el.style.opacity = el.style.opacity - 0.05;
+        if (el.style.opacity <= 0.05) {
+        clearInterval(interhellopreloader);
+        hellopreloader.style.display = "none";
+        document.getElementsByTagName("html")[0].style.overflow = "";
+        }
+    }, 16);
+    }
+    window.onload = function () {
+
+
+    setTimeout(function () {
+        fadeOutnojquery(hellopreloader);
+    }, 100);
+    };
+
+</script>
 
 {%block scripts%}
 {%endblock%}
