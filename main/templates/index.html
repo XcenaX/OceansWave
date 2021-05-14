@@ -10,10 +10,10 @@
     <div class="first-block">
         <div class="title-block">
             <div class="title">
-                Здесь будет ваш заголовок
+                Научись торговать за одно мероприятие!
             </div>
             <div class="under-title">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                В наше время торговоать может каждый, здесь ты найдёшь всю необходимую информацию, чтобы начать зарабатывать
             </div>
             <a href="{%url 'main:events'%}">
                 <div class="title-button">Список мероприятий</div>
@@ -71,7 +71,10 @@
             
             <div class="image" style="background-image: url({%if closest_event.image %}{{closest_event.image.url}}{%else%}{%static 'img/default_img.png'%}{%endif%});"></div>
             <div class="text-block">
-                <div class="title">{{closest_event.name}}</div>
+                <div class="title">
+                    <div class="flag" style="background-image: url({{closest_event.country.flag.url}});"></div>
+                    {{closest_event.name}}
+                </div>
                 <div class="info-block">
                     <div class="left-side">
                         <div class="item">
@@ -83,7 +86,7 @@
                             <div class="value">{{closest_event.teacher}}</div>
                         </div>
                     </div>
-                    <div class="left-side" style="margin-left: 25px;">
+                    <div class="left-side" >
                         <div class="item">
                             <div class="key">Время:</div>
                             <div class="value">{{closest_event.start_time|date:'H:i'}} - {{closest_event.end_time|date:'H:i'}}</div>
@@ -164,7 +167,9 @@
                 О нас
             </div>
             <div class="description">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                <p>Данный Networking был создан не “любителями” в сфере криптовалют, а профессионалами своего дела которые хотят поделится волнами информации большого океана опыта и знании о крипте .</p> 
+                <p>Так был создан первый Networking для начинающих под названием “Oceans-Wave”.</p>
+                <p>Основателем Networking-а является успешный трейдер, инвестор, финансовый консультант занимающийся своим делом с 2015 года -  Amre Kabilash .</p>
             </div>
             <a href="{%url 'main:events'%}">
                 <div class="button">Список мероприятий</div>
@@ -210,26 +215,26 @@
                 <div class="item" id="item1">
                     <div class="half-circle"></div>
                     <div class="bg-block"></div>
-                    <div class="title">Lorem Ispum</div>
-                    <div class="text">Lorem Ipsum is simply dummy text of the printing and </div>
+                    <div class="title">Анализ рынка</div>
+                    <div class="text">Научись изучать рынок и знай что с ним будет в будущем!</div>
                 </div>
                 <div class="item" id="item2">
                     <div class="half-circle"></div>
                     <div class="bg-block"></div>
-                    <div class="title">Lorem Ispum</div>
-                    <div class="text">Lorem Ipsum is simply dummy text of the printing and </div>
+                    <div class="title">Пассивный доход</div>
+                    <div class="text">Начни получать стабильную прибыль ежемесячно без никаких действий!</div>
                 </div>
                 <div class="item no-margin-bottom"  id="item3">
                     <div class="half-circle"></div>
                     <div class="bg-block"></div>
-                    <div class="title">Lorem Ispum</div>
-                    <div class="text">Lorem Ipsum is simply dummy text of the printing and </div>
+                    <div class="title">Торговля без рисков</div>
+                    <div class="text">Онулируй шансы падения валют!</div>
                 </div>
                 <div class="item no-margin-bottom" id="item4">
                     <div class="half-circle"></div>
                     <div class="bg-block"></div>
-                    <div class="title">Lorem Ispum</div>
-                    <div class="text">Lorem Ipsum is simply dummy text of the printing and </div>
+                    <div class="title">Использование ботов</div>
+                    <div class="text">Доверся роботу, который не имеет никаких чувств и ошибок</div>
                 </div>
             </div>
         </div>
@@ -338,7 +343,7 @@
     <div class="book-now">
         <div class="info-block">
             <div class="title">Бронируй сейчас!</div>
-            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum tempore voluptatibus quis omnis laborum consequatur, neque quidem ratione consectetur amet repellendus aliquid saepe laudantium quos, labore necessitatibus, aut voluptatum nobis.</div>
+            <div class="text">Не упусти возможность научится торговать и начать зарабатывать. Посети наши мероприятия и начни обучаться уже сейчас!</div>
             <a href="{%url 'main:events'%}">
                 <div class="button">Список мероприятий</div>
             </a>

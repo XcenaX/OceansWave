@@ -67,6 +67,7 @@
                     <div class="text-block">
                         <div class="left-side">
                             <div class="title">
+                                <div class="flag" style="background-image: url({{event.country.flag.url}});"></div>
                                 {{event.name}} 
                                 {%if event.pdf_file%}
                                     <a href="{{event.pdf_file.url}}" download>
@@ -85,7 +86,7 @@
                                         <div class="value">{{event.teacher}}</div>
                                     </div>
                                 </div>
-                                <div class="left-side" style="margin-left: 25px;">
+                                <div class="left-side" >
                                     <div class="item">
                                         <div class="key">Время:</div>
                                         <div class="value">{{event.start_time|date:'H:i'}} - {{event.end_time|date:'H:i'}}</div>
@@ -114,9 +115,7 @@
                                         <div class="text">Осталось мест: {{event.places_left}}</div>                                        
                                     </div>
                                     
-                                    <div class="down-arrow-block show-mobile">
-                                        <div class="arrow"></div>
-                                    </div>
+                                    
                                 </div>
                                 {%if event.qr_image%}
                                     <div class="qr" style="background-image: url({{event.qr_image.url}});"></div>
@@ -137,7 +136,10 @@
                     
                     <div class="image" style="background-image: url({%if event.image %}{{event.image.url}}{%else%}{%static 'img/default_img.png'%}{%endif%});"></div>
                     <div class="text-block">
-                        <div class="title">{{event.name}}</div>
+                        <div class="title">
+                            <div class="flag" style="background-image: url({{event.country.flag.url}});"></div>
+                            {{event.name}}
+                        </div>
                         <div class="info-block">
                             <div class="left-side">
                                 <div class="item">
@@ -149,7 +151,7 @@
                                     <div class="value">{{event.teacher}}</div>
                                 </div>
                             </div>
-                            <div class="left-side" style="margin-left: 25px;">
+                            <div class="left-side">
                                 <div class="item">
                                     <div class="key">Время:</div>
                                     <div class="value">{{event.start_time|date:'H:i'}} - {{event.end_time|date:'H:i'}}</div>
@@ -176,9 +178,7 @@
                                     Отсканируй Qr
                                     
                                 </div>
-                                <div class="down-arrow-block show-mobile">
-                                    <div class="arrow"></div>
-                                </div>
+                                
                             </div>
                             <div class="qr" style="background-image: url({%if event.qr_image %}{{event.qr_image.url}}{%else%}{%static 'img/default_img.png'%}{%endif%});"></div>
                         </div>
