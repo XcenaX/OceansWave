@@ -5,13 +5,13 @@ from os import name
 import telebot
 from telebot import TeleBot, types
 
-from oceanswave.settings import TELEGRAM
+from oceanswave.settings import BASE_DIR, TELEGRAM
 from threading import Thread
 from django.template.loader import render_to_string
 
 class Bot():
-    owners_file = "bot_data/owners.txt"
-    users_file = "bot_data/users.txt"
+    owners_file = BASE_DIR+"/bot_data/owners.txt"
+    users_file = BASE_DIR+"/bot_data/users.txt"
     bot = None
     
     def __init__(self):
