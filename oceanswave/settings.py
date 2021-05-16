@@ -16,7 +16,10 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-TELEGRAM_BOT_TOKEN = "1895297659:AAGimOKxHnWu4sXRTeMUQVznabYymLblM9w"
+TELEGRAM = {
+    'bot_token': '1895297659:AAGimOKxHnWu4sXRTeMUQVznabYymLblM9w',
+    'channel_name': 'oceanswavenews',
+}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/

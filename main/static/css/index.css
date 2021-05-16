@@ -94,7 +94,7 @@ a{
 
 .menu-block{
     text-align: center;
-    padding-top: 20px;
+    padding-top: 35px;
 }
 
 .menu-block .item{    
@@ -113,7 +113,7 @@ a{
 
 .item .text{
     font-weight: 300;
-    font-size: 16px;
+    font-size: 22px;
     line-height: 19px;
     color: #0202a7;
 }
@@ -154,6 +154,7 @@ a{
     padding-left: 50px;
     padding-right: 50px;
     cursor: pointer;
+    margin-top: 20px;
 }
 
 .river1{
@@ -192,8 +193,8 @@ a{
 
 .title-block .under-title {
     font-weight: 300;
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 25px;
+    line-height: 30px;
     margin-top: 15px;
 }   
 
@@ -1745,6 +1746,9 @@ label.select:after{
 }
 
 @media(max-width: 1600px){
+    .menu-block{
+        padding-top: 20px;
+    }
     .sort-block .sorts{
         height: 40px;
     }
@@ -1769,14 +1773,15 @@ label.select:after{
         line-height: 23px;
     }
     .title-block .under-title{
-        font-size: 14px;
+        font-size: 22px;
+        line-height: 25px;
     }
     .logos-block .logo{
         width: 150px;
     }
 
     .item .text{
-        font-size: 13px;
+        font-size: 18px;
     }
     .social-block .logos{
         margin-top: 17px;
@@ -1908,6 +1913,10 @@ label.select:after{
 
 
 @media(max-width: 1400px) {
+    
+    .item .text{
+        font-size: 15px;
+    }
     .first-block .image-block{
         height: 550px;
     }
@@ -2178,12 +2187,14 @@ label.select:after{
         width: 100%;
     }
     .first-block .title-block .title{
-        font-size: 35px;
-        line-height: 50px;
+        font-size: 20px;
+        line-height: 32px;
+        text-align: center;
     }
     .first-block .title-block .under-title{
-        font-size: 15px;
+        font-size: 13px;
         margin-top: 10px;
+        text-align: center;
     }
     .first-block .title-block .title-button{
         margin-top: 20px;

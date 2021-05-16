@@ -5,6 +5,10 @@ from django.dispatch.dispatcher import receiver
 from main.models import *
 from main.modules.functions import margin_counter, get_paginated_blogs
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from start_bot import Bot
+
+bot = Bot()
+bot.start_bot()
 
 COUNT_SPECIALISTS_ON_PAGE = 9
 COUNT_EVENTS_ON_PAGE = 9
@@ -12,7 +16,11 @@ COUNT_EVENTS_ON_PAGE = 9
 class Index(View):
     def get(self, request):
         specialists = Specialist.objects.all()[0:3]
-        closest_event = Event.objects.filter(start_date__gte=date.today()).order_by("start_date")[0]
+        closest_event = None
+        try:
+            closest_event = Event.objects.filter(start_date__gte=date.today()).order_by("start_date").first()
+        except:
+            pass
         news = New.objects.all()[0:4]
         return render(request, "index.html", {
             "specialists": specialists,
@@ -187,6 +195,8 @@ def country_avatar_delete_onsave(sender, instance, using, **kwargs):
 @receiver(models.signals.post_delete, sender=Event)
 def event_avatar_delete_ondelete(sender, instance, using, **kwargs):
     instance.image.delete(save=False)
+    instance.qr_image.delete(save=False)
+    instance.pdf_file.delete(save=False)
 
 @receiver(models.signals.pre_save, sender=Event)
 def event_avatar_delete_onsave(sender, instance, using, **kwargs):
@@ -198,6 +208,12 @@ def event_avatar_delete_onsave(sender, instance, using, **kwargs):
     new_file = instance.image
     if not old_file == new_file:
         old_file.delete(save=False)
+
+@receiver(models.signals.post_save, sender=Event) 
+def when_init(sender, instance, created, **kwargs):
+    if created:
+        bot.send_event(instance)
+        
 
 @receiver(models.signals.post_delete, sender=New)
 def new_avatar_delete_ondelete(sender, instance, using, **kwargs):

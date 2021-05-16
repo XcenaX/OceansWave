@@ -1,0 +1,11 @@
+<a href="{{ event.image.url }}"></a>
+<strong>{{event.name}}</strong>
+
+<strong>Время: </strong> {{ event.start_date|date:"d.m.Y" }} с {{ event.start_time|date:'H:i' }} до {{ event.end_time|date:'H:i' }}
+<strong>Место проведения: </strong> {{event.location}}
+<strong>Страна: </strong> {{event.country.country}}
+<strong>Цена: </strong> {{event.price}}тг
+<strong>Лектор: </strong> {{event.teacher}}
+<strong>Осталось мест: </strong> {{event.places_left}}
+
+{{ event.description }}

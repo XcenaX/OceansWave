@@ -2,6 +2,7 @@ from django.db import models
 from oceanswave.yandex_s3_storage import ClientDocsStorage
 from datetime import date
 
+
 class New(models.Model):
     title = models.TextField(default="")
     description = models.TextField(default="")
