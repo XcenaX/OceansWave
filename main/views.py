@@ -6,7 +6,7 @@ from main.models import *
 from main.modules.functions import margin_counter, get_paginated_blogs
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from start_bot import TELEGRAM_BOT
-
+TELEGRAM_BOT.start_bot()
 
 COUNT_SPECIALISTS_ON_PAGE = 9
 COUNT_EVENTS_ON_PAGE = 9
