@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+from Bot import Bot
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,6 +42,9 @@ AWS_S3_ENDPOINT_URL = 'https://storage.yandexcloud.net'
 AWS_S3_REGION_NAME = 'storage'
 
 # Application definition
+
+TELEGRAM_BOT = Bot()
+TELEGRAM_BOT.start_bot()
 
 INSTALLED_APPS = [
     'main.apps.MainConfig',

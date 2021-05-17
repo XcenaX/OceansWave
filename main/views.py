@@ -5,10 +5,8 @@ from django.dispatch.dispatcher import receiver
 from main.models import *
 from main.modules.functions import margin_counter, get_paginated_blogs
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from start_bot import Bot
+from oceanswave.settings import TELEGRAM_BOT
 
-bot = Bot()
-bot.start_bot()
 
 COUNT_SPECIALISTS_ON_PAGE = 9
 COUNT_EVENTS_ON_PAGE = 9
@@ -212,7 +210,7 @@ def event_avatar_delete_onsave(sender, instance, using, **kwargs):
 @receiver(models.signals.post_save, sender=Event) 
 def when_init(sender, instance, created, **kwargs):
     if created:
-        bot.send_event(instance)
+        TELEGRAM_BOT.send_event(instance)
         
 
 @receiver(models.signals.post_delete, sender=New)
