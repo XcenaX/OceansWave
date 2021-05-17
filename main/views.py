@@ -5,7 +5,7 @@ from django.dispatch.dispatcher import receiver
 from main.models import *
 from main.modules.functions import margin_counter, get_paginated_blogs
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from oceanswave.settings import TELEGRAM_BOT
+from start_bot import TELEGRAM_BOT
 
 
 COUNT_SPECIALISTS_ON_PAGE = 9

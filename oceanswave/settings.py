@@ -44,9 +44,6 @@ AWS_S3_REGION_NAME = 'storage'
 
 # Application definition
 
-TELEGRAM_BOT = Bot(TELEGRAM)
-TELEGRAM_BOT.start_bot()
-
 INSTALLED_APPS = [
     'main.apps.MainConfig',
     'django.contrib.admin',
