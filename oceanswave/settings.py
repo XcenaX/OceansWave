@@ -20,6 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TELEGRAM = {
     'bot_token': '1895297659:AAGimOKxHnWu4sXRTeMUQVznabYymLblM9w',
     'channel_name': 'oceanswavenews',
+    "BASE_DIR": BASE_DIR,
 }
 
 # Quick-start development settings - unsuitable for production
@@ -43,7 +44,7 @@ AWS_S3_REGION_NAME = 'storage'
 
 # Application definition
 
-TELEGRAM_BOT = Bot()
+TELEGRAM_BOT = Bot(TELEGRAM)
 TELEGRAM_BOT.start_bot()
 
 INSTALLED_APPS = [

@@ -5,18 +5,21 @@ from os import name
 import telebot
 from telebot import TeleBot, types
 
-from oceanswave.settings import BASE_DIR, TELEGRAM
 from threading import Thread
 from django.template.loader import render_to_string
 
 class Bot():
-    owners_file = BASE_DIR/"bot_data/owners.txt"
-    users_file = BASE_DIR/"bot_data/users.txt"
+    owners_file = "bot_data/owners.txt"
+    users_file = "bot_data/users.txt"
     bot = None
+    channel_name = ""
     
-    def __init__(self):
-        self.bot = telebot.TeleBot(TELEGRAM["bot_token"])
-        @self.bot.message_handler(content_types=['text'])
+    def __init__(self, settings):
+        self.bot = telebot.TeleBot(settings["bot_token"])
+        self.channel_name = settings["channel_name"]
+        self.owners_file = settings["BASE_DIR"]/self.owners_file
+        self.users_file = settings["BASE_DIR"]/self.users_file
+        @self.bot.message_handler(content_types=['text'])        
         def start(message):
             if self.check_owner(message.from_user.id): 
                 if message.text == "/start":
@@ -77,7 +80,7 @@ class Bot():
         return keyboard
 
     def make_mailing(self, message):
-        self.bot.send_message(chat_id="@%s" % TELEGRAM['channel_name'], text=message.text)
+        self.bot.send_message(chat_id="@%s" % self.channel_name, text=message.text)
         self.bot.send_message(message.from_user.id, "Я закончил рассылку\nЧто дальше?",  reply_markup=self.get_main_keyboard())
 
     def send_event(self, event):
@@ -85,7 +88,7 @@ class Bot():
         message_html = render_to_string('telegram_message.html', {
             'event': event
         })
-        self.bot.send_message(chat_id="@%s" % TELEGRAM['channel_name'], text=message_html, parse_mode="html")
+        self.bot.send_message(chat_id="@%s" % self.channel_name, text=message_html, parse_mode="html")
         # for user in users:         
         #     bot.send_message(user, text=event_text, parse_mode="html")   
         
