@@ -1236,11 +1236,11 @@ a{
 .review-block .partners-block{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .partners-block .partner{
-    width: 40%;
+    width: 45%;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -1261,9 +1261,10 @@ a{
 .image-border .image{
     width: 100%;
     padding-bottom: 100%;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     margin: auto;
+    border-radius: 50%;
 }
 
 .partner .info-block {
@@ -1279,6 +1280,9 @@ a{
     color: #000000;
     max-height: 66%;
     overflow: auto;
+    white-space: pre-wrap;
+    padding-right: 5px;
+    text-align: left;
 }
 
 
