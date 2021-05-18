@@ -18,7 +18,7 @@ from Bot import Bot
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 TELEGRAM = {
-    'bot_token': '1895297659:AAGimOKxHnWu4sXRTeMUQVznabYymLblM9w',
+    'bot_token': '1895297659:AAFdRK2iPvGAQeOCB8auCqOshuE3VKomenQ',
     'channel_name': 'oceanswavenews',
     "BASE_DIR": BASE_DIR,
 }
