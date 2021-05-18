@@ -19,25 +19,7 @@ class Bot():
         self.channel_name = settings["channel_name"]
         self.owners_file = settings["BASE_DIR"]/self.owners_file
         self.users_file = settings["BASE_DIR"]/self.users_file
-        @self.bot.message_handler(content_types=['text'])        
-        def start(message):
-            if self.check_owner(message.from_user.id): 
-                if message.text == "/start":
-                    self.add_user(message.from_user.id)
-                    self.bot.send_message(message.from_user.id, "Привет", reply_markup=self.get_main_keyboard())   
-                else:
-                    self.bot.send_message(message.from_user.id, "Привет", reply_markup=self.get_main_keyboard())   
-                    
-            else:
-                self.bot.send_message(message.from_user.id, "Я не могу отвечать на сообщения!\nЯ могу только рассылать новости!")
-
-        @self.bot.callback_query_handler(func=lambda call: True)
-        def callback_worker(call):
-            if call.data == "add_new": 
-                self.bot.send_message(call.message.chat.id, "Напиши текст рассылки: ")   
-                self.bot.register_next_step_handler(call.message, self.make_mailing)
-            else:
-                self.bot.send_message(call.message.chat.id, "Я тебя не понимаю")   
+         
 
     def get_owners(self):
         with open(self.owners_file) as f:
