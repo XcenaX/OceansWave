@@ -63,7 +63,7 @@ class Bot():
 
     def make_mailing(self, message):
         print(message)
-        if message.text != "Something went wrong, please try again.":
+        if "wrong" not in message.text:
             self.bot.send_message(chat_id="@%s" % self.channel_name, text=message.text)
             self.bot.send_message(message.from_user.id, "Я закончил рассылку\nЧто дальше?",  reply_markup=self.get_main_keyboard())
 
