@@ -62,10 +62,11 @@ class Bot():
         return keyboard
 
     def make_mailing(self, message):
+        print(message)
         if message.text != "Something went wrong, please try again.":
             self.bot.send_message(chat_id="@%s" % self.channel_name, text=message.text)
             self.bot.send_message(message.from_user.id, "Я закончил рассылку\nЧто дальше?",  reply_markup=self.get_main_keyboard())
-            
+
     def send_event(self, event):
         users = self.get_users()
         message_html = render_to_string('telegram_message.html', {
