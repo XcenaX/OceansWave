@@ -14,7 +14,7 @@ class CountrySerializer(serializers.ModelSerializer):
     cities = CitySerializer(many=True, read_only=False, required=False)
     class Meta:
         model = Country
-        fields = ("id", "country", "citites")
+        fields = ("id", "country", "cities")
 
 
 class SpecialistSerializer(serializers.ModelSerializer):
