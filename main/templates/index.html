@@ -61,6 +61,7 @@
         <div class="orange-coin1 hide-mobile"></div>
 
         <div class="title">Ближайшее мероприятие</div>
+        {%if closest_event%}
         <div class="event">
             <div class="planet"></div>
             {%if closest_event.pdf_image%}
@@ -118,6 +119,24 @@
                 </div>
             </div>
         </div>
+        {%else%}
+            <div class="empty-event">
+                <div class="title">Здесь пока ничего нет</div>
+                <div class="under-title">Следи за новостями на нашем Telegram канале и на странице Instagram. Узнавай новости раньше того, как они появятся здесь!</div>
+                <div class="image"></div>
+                <div class="buttons">
+                    <a href="https://t.me/oceanswavenews" class="telegram">
+                        <div class="">Telegram канал</div>
+                    </a>
+                    <a href="https://www.instagram.com/smarttradecoin/" class="instagram">
+                        
+                            <div class="icon"></div>
+                            <div class="text">Instagram</div>
+                        
+                    </a>                    
+                </div>
+            </div>
+        {%endif%}
     </div>
 
     <div class="see-events-block hide-mobile">
@@ -158,7 +177,7 @@
 
     <div class="about-block" id="about">
         <div class="river2"></div>
-        <div class="image"></div>
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" class="image"></iframe>
         <div class="text-block">
             <div class="title">
                 О нас
@@ -168,9 +187,23 @@
                 <p>Так был создан первый Networking для начинающих под названием “Oceans-Wave”.</p>
                 <p>Основателем Networking-а является успешный трейдер, инвестор, финансовый консультант занимающийся своим делом с 2015 года -  Amre Kabilash .</p>
             </div>
-            <a href="{%url 'main:events'%}">
-                <div class="button">Список мероприятий</div>
-            </a>            
+
+            <div class="under-block">
+                <a href="{%url 'main:events'%}" class="button">
+                    <div>Список мероприятий</div>
+                </a>                            
+                <div class="socials hide-mobile">                    
+                    <a href="https://www.instagram.com/smarttradecoin/">
+                        <div class="instagram item"></div>
+                    </a>            
+                    <a href="https://www.youtube.com/channel/UCMByuH8s8YdtA4WkVGidJ-Q">
+                        <div class="youtube item"></div>
+                    </a>                                
+                </div>
+                    
+                
+            </div>
+            
         </div>
     </div>
 
@@ -286,62 +319,78 @@
     <div class="review-block">
         <div class="title">Отзывы наших партнёров</div>
         <div class="partners-block">
-            <div class="partner">
-                <div class="image-border">
-                    <div class="image" style="background-image: url({%static 'img/mark2.png'%});"></div>
-                </div>
-                <div class="info-block">
-                    <div class="name">Ринат</div>
-                    <div class="description scrollable">Добрый вечер Амре. Хочу поблагодарить вас за отличный тренинг. Было бомбово. Я занимаюсь проектом STC с Ноября 2020 года, и даже не знал сколько есть дополнительных возможностей заработать и увеличить свои активы, я в шоке. 
-Тренинг мне дал понимание того, как можно за не большой промежуток времени, выйти на колоссальный пассивный доход.
-Это КРУТО :+1::fire:. Теперь я точно знаю как мне двигаться. Огромное спасибо, жму руку!!!
-                    </div>
-                    <div class="date">01.05.2021</div>
-                </div>
-            </div>
-            <div class="partner">
-                <div class="image-border" style="transform: rotate(45deg);">
-                    <div class="image" style="background-image: url({%static 'img/mark.png'%});transform: rotate(-45deg);"></div>
-                </div>
-                <div class="info-block">
-                    <div class="name">Алия</div>
-                    <div class="description scrollable">Здравствуйте! Меня зовут Алия. Я была на тренинге с ребенком.
-
-Тренинг очень понравился, оказался полезным, интересным, увлекательным. Прекрасная атмосфера, знакомство с новыми людьми. Жалко,  что пораньше ушли, не смогли остаться на сутки. Обязательно хочется на следующий!
-⠀
-Спасибо за  знания, мотивацию. Очень интересный и полезный опыт. Большая благодарность Вам Амре и вашей команде!
-                    </div>
-                    <div class="date">13.04.2021</div>
-                </div>
-            </div>
-            <div class="partner">
-                <div class="image-border" style="transform: rotate(90deg);">
-                    <div class="image" style="background-image: url({%static 'img/mark.png'%});transform: rotate(-90deg);"></div>
-                </div>
-                <div class="info-block">
-                    <div class="name">Кайрат</div>
-                    <div class="description scrollable">Хочу выразить признательность за насыщенную и плодотворную программу конференции.  За её высокий профессиональный уровень и актуальность предложенных тем. А так же за возможность пообщаться с единомышленниками из разных регионов и получить бесценный опыт. Особая благодарность Амре за прекрасную организацию, чуткость, внимательность к каждому участнику конференции и тёплую атмосферу.
-                    </div>
-                    <div class="date">10.04.2021</div>
-                </div>
-            </div>
-            <div class="partner">
-                <div class="image-border" style="transform: rotate(135deg);">
-                    <div class="image" style="background-image: url({%static 'img/mark3.png'%});transform: rotate(-135deg);"></div>
-                </div>
-                <div class="info-block">
-                    <div class="name">Амина</div>
-                    <div class="description scrollable">В красивейшем горном отеле "Be Fine",  прошёл однодневный командный  тренинг в составе из 50-ти человек у  руководителя нашей  структуры АМРЕ КАБЫЛАШ. Разобраны следующие темы: 
-1. Ограничение мышления.
-2. Психология бизнеса.
-3. Психология продаж.
-Применяя в работе рекомендуемые стратегии, можно достичь хороших результатов  вместе со своей командой. Передана сильная энергетика, отличная мотивация. Ведь наш уникальный продукт сам себя продаёт. Наша задача донести правильную информацию большему количеству людей, чтобы они  инвестируя позаботились о своём будущем. Очен важен довольный клиент. С благодарностью, Амина, Алматы.
-                    </div>
-                    <div class="date">01.04.2021</div>
-                </div>
-            </div>
+           
         </div>
     </div>
+
+    <div class="employers-section">
+        <div class="employers-wrapper wrapper">
+            <div class="employers__list" style="height:400px ">
+                <ul id="employers-carousel" class="cS-hidden">
+                        <li style="height:400px">
+                            <div class="employers__item">
+                                <div class="employer-image" >
+                                    <img src="{%static 'img/mark2.png'%}" />
+                                    <div class="name">Ринат</div>
+                                </div>
+                                <div class="text-block">                                    
+                                    <div class="text">
+                                        Добрый вечер Амре. Хочу поблагодарить вас за отличный тренинг. Было бомбово. Я занимаюсь проектом STC с Ноября 2020 года, и даже не знал сколько есть дополнительных возможностей заработать и увеличить свои активы, я в шоке..                                        
+                                        Тренинг мне дал понимание того, как можно за не большой промежуток времени, выйти на колоссальный пассивный доход.
+                                        Это КРУТО. Теперь я точно знаю как мне двигаться. Огромное спасибо, жму руку!!!
+                                    </div>
+                            </div>
+                        </li>
+                        <li style="height:400px ">
+                            <div class="employers__item">
+                                <div class="employer-image" >
+                                    <img src="{%static 'img/mark4.png'%}" />
+                                    <div class="name">Алия</div>
+                                </div>
+                                <div class="text-block">
+                                    <div class="text">
+                                        Здравствуйте! Меня зовут Алия. Я была на тренинге с ребенком.
+
+                                        Тренинг очень понравился, оказался полезным, интересным, увлекательным. Прекрасная атмосфера, знакомство с новыми людьми. Жалко,  что пораньше ушли, не смогли остаться на сутки. Обязательно хочется на следующий!
+                                        ⠀
+                                        Спасибо за  знания, мотивацию. Очень интересный и полезный опыт. Большая благодарность Вам Амре и вашей команде!
+                                    </div>
+                            </div>
+                        </li>
+                        <li style="height:400px ">
+                            <div class="employers__item">
+                                <div class="employer-image" >
+                                    <img src="{%static 'img/mark.png'%}" />
+                                    <div class="name">Кайрат</div>
+                                </div>
+                                <div class="text-block">                                    
+                                    <div class="text">
+                                        Хочу выразить признательность за насыщенную и плодотворную программу конференции.  За её высокий профессиональный уровень и актуальность предложенных тем. А так же за возможность пообщаться с единомышленниками из разных регионов и получить бесценный опыт. Особая благодарность Амре за прекрасную организацию, чуткость, внимательность к каждому участнику конференции и тёплую атмосферу.
+                                    </div>
+                            </div>
+                        </li>
+                        <li style="height:400px ">
+                            <div class="employers__item">
+                                <div class="employer-image" >
+                                    <img src="{%static 'img/mark3.png'%}" />
+                                    <div class="name">Амина</div>
+                                </div>
+                                <div class="text-block">                                    
+                                    <div class="text">
+                                        В красивейшем горном отеле "Be Fine",  прошёл однодневный командный  тренинг в составе из 50-ти человек у  руководителя нашей  структуры АМРЕ КАБЫЛАШ. Разобраны следующие темы: 
+                                        1. Ограничение мышления.
+                                        2. Психология бизнеса.
+                                        3. Психология продаж.
+                                        Применяя в работе рекомендуемые стратегии, можно достичь хороших результатов  вместе со своей командой. Передана сильная энергетика, отличная мотивация. Ведь наш уникальный продукт сам себя продаёт. Наша задача донести правильную информацию большему количеству людей, чтобы они  инвестируя позаботились о своём будущем. Очен важен довольный клиент. С благодарностью, Амина, Алматы.
+                                    </div>
+                            </div>
+                        </li>
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+    
 
     <div class="book-now">
         <div class="info-block">
