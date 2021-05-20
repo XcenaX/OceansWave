@@ -70,7 +70,5 @@ class Bot():
         # for user in users:         
         #     bot.send_message(user, text=event_text, parse_mode="html")   
         
-    def start_bot(self):
-        thread = Thread(target = self.bot.polling, args = (True, 0))
-        thread.start()
+   
 
