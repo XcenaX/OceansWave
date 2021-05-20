@@ -21,7 +21,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 
 TELEGRAM = {
-    'bot_token': '1895297659:AAFdRK2iPvGAQeOCB8auCqOshuE3VKomenQ',
+    'bot_token': '1895297659:AAFRKuWeovfOtshIsTNdd8tWDREtDUG8Gwo',
     'channel_name': 'oceanswavenews',
     "BASE_DIR": BASE_DIR,
 }
