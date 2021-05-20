@@ -9,8 +9,6 @@ from threading import Thread
 from django.template.loader import render_to_string
 
 class Bot():
-    owners_file = "bot_data/owners.txt"
-    users_file = "bot_data/users.txt"
     bot = None
     channel_name = ""
     
@@ -21,7 +19,6 @@ class Bot():
         self.users_file = settings["BASE_DIR"]/self.users_file
 
     def send_event(self, event):
-        users = self.get_users()
         message_html = render_to_string('telegram_message.html', {
             'event': event
         })
