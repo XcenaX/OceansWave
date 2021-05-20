@@ -34,7 +34,6 @@ class Specialist(models.Model):
     description = models.TextField(default="")
     count_of_lections = models.IntegerField(default=0)
     image = models.FileField(storage=ClientDocsStorage(), blank=True, null=True)
-    whatsapp = models.TextField(default="")
     telegram = models.TextField(default="")
     
     def get_rating_range(self):

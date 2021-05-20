@@ -20,4 +20,4 @@ class CountrySerializer(serializers.ModelSerializer):
 class SpecialistSerializer(serializers.ModelSerializer):
     class Meta:
         model = Specialist
-        fields = ("id", "name", "whatsapp", "telegram")
+        fields = ("id", "name", "telegram")
