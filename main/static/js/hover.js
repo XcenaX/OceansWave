@@ -3,9 +3,11 @@ $(function() {
       
       $('#item1').css('background', '#253D92');
       $('#item1')[0].children[1].style.background = 'rgba(37, 61, 146, 0.5)';
+      $('#item1')[0].children[3].style.color = 'white';
     }, function() {
       $('#item1').css('background', '#FFB74B');
       $('#item1')[0].children[1].style.background = '#FFDDA9';
+      $('#item1')[0].children[3].style.color = '#212121';
     });
 });
 
@@ -14,9 +16,11 @@ $(function() {
     
     $('#item2').css('background', '#253D92');
     $('#item2')[0].children[1].style.background = 'rgba(37, 61, 146, 0.5)';
+    $('#item2')[0].children[3].style.color = 'white';
   }, function() {
     $('#item2').css('background', '#FFB74B');
     $('#item2')[0].children[1].style.background = '#FFDDA9';
+    $('#item2')[0].children[3].style.color = '#212121';
   });
 });
 
@@ -25,9 +29,11 @@ $(function() {
     
     $('#item3').css('background', '#253D92');
     $('#item3')[0].children[1].style.background = 'rgba(37, 61, 146, 0.5)';
+    $('#item3')[0].children[3].style.color = 'white';
   }, function() {
     $('#item3').css('background', '#FFB74B');
     $('#item3')[0].children[1].style.background = '#FFDDA9';
+    $('#item3')[0].children[3].style.color = '#212121';
   });
 });
 
@@ -36,9 +42,11 @@ $(function() {
     
     $('#item4').css('background', '#253D92');
     $('#item4')[0].children[1].style.background = 'rgba(37, 61, 146, 0.5)';
+    $('#item4')[0].children[3].style.color = 'white';
   }, function() {
     $('#item4').css('background', '#FFB74B');
     $('#item4')[0].children[1].style.background = '#FFDDA9';
+    $('#item4')[0].children[3].style.color = '#212121';
   });
 });
 
