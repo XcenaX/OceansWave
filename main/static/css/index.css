@@ -122,6 +122,16 @@ a{
     color: #0202a7;
 }
 
+.empty-event .icon {
+    width: 11%;
+    padding-bottom: 11%;
+    position: absolute;
+    background: url(/static/img/instagram_white.svg);
+    background-size: contain;
+    right: 15%;
+    background-repeat: no-repeat;
+}
+
 .menu-block .item:hover{
     color: #16296b;
     border-bottom: 2px solid #253D92;
@@ -177,6 +187,7 @@ a{
     background-position: center;
     margin-top: 40px;
     margin-bottom: 40px;
+    position: relative;
 }
 
 .empty-event .buttons{
