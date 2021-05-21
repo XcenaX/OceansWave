@@ -42,10 +42,16 @@ class Specialist(models.Model):
     def __str__(self):
         return self.name
 
+class Assistant(models.Model):
+    name = models.TextField(default="")
+    phone = models.TextField(default="")
+    def __str__(self):
+        return self.name
 
 class Event(models.Model):
     name = models.TextField(default="")
     image = models.FileField(storage=ClientDocsStorage(), blank=True, null=True)
+    video_url = models.TextField(default="")
     start_date = models.DateField(blank=True, null=True)
     start_time = models.TimeField(blank=True, null=True)    
     end_time = models.TimeField(blank=True, null=True)    
@@ -54,11 +60,10 @@ class Event(models.Model):
     description = models.TextField(default="")
     places_left = models.IntegerField()
     pdf_file = models.FileField(storage=ClientDocsStorage(), blank=True, null=True)
-    qr_image = models.FileField(storage=ClientDocsStorage(), blank=True, null=True)
     expired = models.BooleanField(default=False)
     location = models.TextField(default="")
     country = models.ForeignKey(Country, on_delete=models.CASCADE, blank=True, null=True)
-
+    assistant = models.ForeignKey(Assistant, on_delete=models.CASCADE, blank=True, null=True)
     def get_expired(self):
         if self.start_date < date.today():
             self.expired = True

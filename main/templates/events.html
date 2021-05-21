@@ -106,22 +106,9 @@
                         </div>
                         <div class="right-side">
                             <div class="buy-block">
-                                <div class="buttons">
-                                    <div class="order">
-                                        <div class="text">Отсканируй Qr</div>
-                                        
-                                    </div>
-                                    <div class="left-places">
-                                        <div class="text">Осталось мест: {{event.places_left}}</div>                                        
-                                    </div>
-                                    
-                                    
-                                </div>
-                                {%if event.qr_image%}
-                                    <div class="qr" style="background-image: url({{event.qr_image.url}});"></div>
-                                {%else%}
-                                    <div class="qr" style="background-image: url();"></div>
-                                {%endif%}
+                                <a href="https://wa.me/{{closest_event.assistant.phone}}" class="book-button">Для брони обратитесь к асистенту                        
+                                {{event.assistant.name}} {{event.assistant.phone}}
+                                </a>                    
                             </div>
                         </div>                        
                         <div class="description-block">{{event.description}}</div>
@@ -172,15 +159,9 @@
                         <div class="description-block scrollable">{{event.description}}</div>
         
                         <div class="buy-block">
-                            <div class="buttons">
-                                <div class="left-places">Осталось мест: {{event.places_left}}</div>
-                                <div class="order">
-                                    Отсканируй Qr
-                                    
-                                </div>
-                                
-                            </div>
-                            <div class="qr" style="background-image: url({%if event.qr_image %}{{event.qr_image.url}}{%else%}{%static 'img/default_img.png'%}{%endif%});"></div>
+                            <a href="https://wa.me/{{closest_event.assistant.phone}}" class="book-button">Для брони обратитесь к асистенту                        
+                            {{event.assistant.name}} {{event.assistant.phone}}
+                            </a>                    
                         </div>
                     </div>
                 </div>

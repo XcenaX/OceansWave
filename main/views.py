@@ -25,6 +25,8 @@ class Index(View):
             "specialists": specialists,
             "closest_event": closest_event,
             "news": news,
+            "rivers_mobile": range(0, len(specialists) - 1),
+            "margin_counter_mobile": margin_counter(-100, 700)
         })
     def post(self, request):
         return render(request, "index.html", {})

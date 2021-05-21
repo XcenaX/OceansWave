@@ -563,14 +563,15 @@
 
 @media(max-width:1400px){
 	.employers__item .text{
-			font-size: 12px;
-			line-height: 15px;
+			font-size: 14px;
+			line-height: 16px;
 	}
 	.employers-wrapper .employers__list .employers__item .employer-image{
 		height: 25%;
 		padding: 20px;
 	}
 	.employers__item .name{
-		font-size: 14px;
+		font-size: 18px;
+		margin-bottom: 10px;
 	}
 }
