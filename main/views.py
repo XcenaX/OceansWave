@@ -196,7 +196,6 @@ def country_avatar_delete_onsave(sender, instance, using, **kwargs):
 @receiver(models.signals.post_delete, sender=Event)
 def event_avatar_delete_ondelete(sender, instance, using, **kwargs):
     instance.image.delete(save=False)
-    instance.qr_image.delete(save=False)
     instance.pdf_file.delete(save=False)
 
 @receiver(models.signals.pre_save, sender=Event)

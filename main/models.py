@@ -39,6 +39,9 @@ class Specialist(models.Model):
     def get_rating_range(self):
         return range(0, int(self.rating))
 
+    def get_cutted_telegram(self):
+        return self.telegram.replace("@","")
+
     def __str__(self):
         return self.name
 
