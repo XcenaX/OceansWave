@@ -3,10 +3,6 @@
     
 }
 
-a:visited{
-    color: initial;
-}
-
 html{
     max-width: 1920px;
     min-width: 1100px;
@@ -119,7 +115,7 @@ a{
     font-weight: 300;
     font-size: 22px;
     line-height: 19px;
-    color: #0202a7;
+    color: #0202a7 !important;
 }
 
 .empty-event .icon {
@@ -1134,7 +1130,7 @@ a{
     background: #FFB74B;
     box-shadow: 0px 4px 10px rgb(0 0 0 / 25%);
     border-radius: 6px;
-    color: white;
+    color: white !important;
     font-weight: 500;
     font-size: 17px;
     white-space: pre-line;
