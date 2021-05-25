@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURE_SSL_REDIRECT = True
 
 TELEGRAM = {
-    'bot_token': '1810785781:AAHanrOq6vj5clN2wcNBt_-cQQAWhLq-ev4',
+    'bot_token': '1810785781:AAHI4MetKyo6jKCCKE3D4QPjC-_CgVt--eI',
     'channel_name': 'oceanswavenews',
     "BASE_DIR": BASE_DIR,
 }
