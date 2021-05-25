@@ -472,7 +472,7 @@ a{
 .info-block .left-side.full{
     width: 100%;
     display: block;
-    margin-top: 5px;
+    margin-top: 0px;
     margin-bottom: 10px;
 }
 
@@ -2189,6 +2189,7 @@ label.select:after{
         font-size: 25px;
         line-height: 29px;
         margin: 0px;
+        margin-bottom: 8px;
     }
     .left-side .key, .left-side .value{
         font-size: 11px;
