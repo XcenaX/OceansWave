@@ -2,7 +2,9 @@ $(document).ready(function () {
 	console.log("jquery works!");
 	$("#employers-carousel").lightSlider({
         item: 2,
-		loop: true,
+		auto:true,
+        loop:true,
+        pauseOnHover: true,
 		addClass: "employers-carousel",
 		adaptiveHeight: true,
 		keyPress: true,
