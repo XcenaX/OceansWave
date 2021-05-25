@@ -836,7 +836,7 @@ a{
 }
 
 .about-block .image{
-    width: 50%;
+    width: 55%;
 }
 
 .about-block .text-block{
@@ -968,14 +968,16 @@ a{
     margin-top: 240px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .teach-block .image{
-    width: 35%;
-    padding-bottom: 41%;
+    width: 40%;
+    padding-bottom: 46%;
     background-image: url(/static/img/teach_block.png);
     background-size: contain;
     background-repeat: no-repeat;
+    height: 0px;
 }
 
 .teach-block .info-block{
