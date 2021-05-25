@@ -5,6 +5,7 @@ $(document).ready(function () {
 		auto:true,
         loop:true,
         pauseOnHover: true,
+		speed: 3000,
 		addClass: "employers-carousel",
 		adaptiveHeight: true,
 		keyPress: true,
