@@ -54,7 +54,7 @@ class Assistant(models.Model):
 class Event(models.Model):
     name = models.TextField(default="")
     image = models.FileField(storage=ClientDocsStorage(), blank=True, null=True)
-    video_url = models.TextField(default="")
+    video_url = models.TextField(default="", blank=True, null=True)
     start_date = models.DateField(blank=True, null=True)
     end_date = models.DateField(blank=True, null=True)
     start_time = models.TimeField(blank=True, null=True)    
