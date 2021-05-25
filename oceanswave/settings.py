@@ -17,8 +17,8 @@ from Bot import Bot
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-SECURE_SSL_REDIRECT = True
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_SSL_REDIRECT = True
 
 TELEGRAM = {
     'bot_token': '1810785781:AAHanrOq6vj5clN2wcNBt_-cQQAWhLq-ev4',

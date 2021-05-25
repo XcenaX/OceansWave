@@ -2,7 +2,6 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import django_countries.fields
 import oceanswave.yandex_s3_storage
 
 
@@ -25,7 +24,7 @@ class Migration(migrations.Migration):
             name='Country',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('country', django_countries.fields.CountryField(max_length=2)),
+                ('country', models.TextField(default='')),
                 ('cities', models.ManyToManyField(blank=True, null=True, to='main.City')),
             ],
         ),
