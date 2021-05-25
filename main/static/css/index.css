@@ -115,7 +115,7 @@ a{
     font-weight: 300;
     font-size: 22px;
     line-height: 19px;
-    color: #0202a7 !important;
+    color: #0202a7;
 }
 
 .empty-event .icon {
