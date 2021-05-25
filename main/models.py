@@ -60,7 +60,7 @@ class Event(models.Model):
     start_time = models.TimeField(blank=True, null=True)    
     end_time = models.TimeField(blank=True, null=True)    
     teacher = models.TextField(default="")
-    price = models.IntegerField(default=0)
+    price = models.TextField(default="")
     description = models.TextField(default="")
     places_left = models.IntegerField()
     pdf_file = models.FileField(storage=ClientDocsStorage(), blank=True, null=True)
