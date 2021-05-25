@@ -64,7 +64,7 @@
         {%if closest_event%}
         <div class="event">
             <div class="planet"></div>
-            {%if closest_event.pdf_image%}
+            {%if closest_event.pdf_file%}
                 <a href="{{closest_event.pdf_file.url}}" download>
                     <div class="download-pdf hide-mobile" title="Скачать" ></div>
                 </a>
