@@ -1,6 +1,6 @@
 <strong>{{event.name}}</strong>
 
-<strong>Время: </strong> {{ event.start_date|date:"d.m.Y" }} с {{ event.start_time|date:'H:i' }} до {{ event.end_time|date:'H:i' }}
+<strong>Время: </strong> {{event.ru_date}} {%if event.start_time and event.end_time%}с {{ event.start_time|date:'H:i' }} до {{ event.end_time|date:'H:i' }}{%endif%}
 <strong>Место проведения: </strong> {{event.location}}
 <strong>Страна: </strong> {{event.country.country}}
 <strong>Цена: </strong> {{event.price}}тг

@@ -488,20 +488,22 @@ a{
     float: left;
 }
 
-.left-side .key{
+.left-side .key {
     color: #1D3588;
     font-weight: 500;
-    display: inline-block;
+    display: block;
     margin-right: 5px;
     font-size: 20px;
     line-height: 24px;
+    float: left;
 }
-.left-side .value{
-    display: inline-block;
+.left-side .value {
+    
     color: #AEAEAE;
     font-size: 20px;
     line-height: 24px;
     font-weight: 300;
+    
 }
 
 .left-side .item{
