@@ -978,6 +978,7 @@ a{
     background-size: contain;
     background-repeat: no-repeat;
     height: 0px;
+    align-self: flex-end;
 }
 
 .teach-block .info-block{
