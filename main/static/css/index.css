@@ -795,7 +795,7 @@ a{
     padding-bottom: 40%;
     display: inline-block;
     background-image: url(/static/img/title.png);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     vertical-align: top;
