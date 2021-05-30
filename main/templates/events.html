@@ -63,7 +63,11 @@
             
             {%for event in events%}            
                 <div class="event hide-mobile">
-                    <div class="image" style="background-image: url({%if event.image %}{{event.image.url}}{%else%}{%static 'img/default_img.png'%}{%endif%});"></div>
+                    {%if event.video_url%}
+                        <iframe class="image" src="{{event.video_url}}" frameborder="0"></iframe>
+                    {%else%}
+                        <div class="image" style="background-image: url({%if event.image %}{{event.image.url}}{%else%}{%static 'img/default_img.png'%}{%endif%});"></div>
+                    {%endif%}
                     <div class="text-block">
                         <div class="left-side">
                             <div class="title">
