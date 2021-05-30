@@ -15,13 +15,15 @@
 
 .event.hide-mobile .text-block .title{
     position: relative ;
-    width: fit-content;
+    width: 90%;
 }
 
 .event.hide-mobile .text-block .title .download-pdf{
-    right: -2.5%;
+    right: -9%;
     top: 0px;
     height: 100%;
+    width: 9%;
+    margin-top: 5px;
 }
 
 .event.hide-mobile .text-block .description-block{
