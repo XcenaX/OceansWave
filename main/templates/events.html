@@ -111,11 +111,17 @@
                             </div>
                         </div>
                         <div class="right-side">
-                            <div class="buy-block">
-                                <a href="https://wa.me/{{event.assistant.phone}}" class="book-button">Для брони обратитесь к асистенту                        
-                                {{event.assistant.name}} {{event.assistant.phone}}
-                                </a>                    
-                            </div>
+                            {%event.get_expired%}
+                                <div class="buy-block">
+                                    <div class="book-button">Бронь недоступна</div>                    
+                                </div>
+                            {%else%}
+                                <div class="buy-block">
+                                    <a href="https://wa.me/{{event.assistant.phone}}" class="book-button">Для брони обратитесь к асистенту                        
+                                    {{event.assistant.name}} {{event.assistant.phone}}
+                                    </a>                    
+                                </div>
+                            {%endif%}
                         </div>                        
                         <div class="description-block">{{event.description}}</div>
                     </div>
